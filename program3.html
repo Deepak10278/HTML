@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feedback Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .feedback-form {
+      background: white;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    .feedback-form h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .feedback-form label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #555;
+    }
+    .feedback-form input[type="text"],
+    .feedback-form input[type="email"],
+    .feedback-form select,
+    .feedback-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      resize: vertical;
+    }
+    .feedback-form textarea {
+      min-height: 100px;
+    }
+    .feedback-form button {
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+    .feedback-form button:hover {
+      background-color: #357ABD;
+    }
+  </style>
+</head>
+<body>
+
+  <form class="feedback-form" action="#" method="POST">
+    <h2>Feedback</h2>
+
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Your name" required />
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Your email" required />
+
+    <label for="rating">Rating</label>
+    <select id="rating" name="rating" required>
+      <option value="" disabled selected>Select a rating</option>
+      <option value="5">5 - Excellent</option>
+      <option value="4">4 - Very good</option>
+      <option value="3">3 - Good</option>
+      <option value="2">2 - Fair</option>
+      <option value="1">1 - Poor</option>
+    </select>
+
+    <label for="comments">Comments</label>
+    <textarea id="comments" name="comments" placeholder="Write your feedback here..." required></textarea>
+
+    <button type="submit">Submit Feedback</button>
+  </form>
+
+</body>
+</html>
