@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Column Layout</title>
+    <style>
+        body { font-family: Arial; margin: 0; }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+        .sidebar {
+            background-color: #1b1d96;
+            padding: 20px;
+        }
+        .content {
+            background-color: #561111;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Sidebar</h2>
+            <p>Links and menu items go here.</p>
+        </div>
+        <div class="content">
+            <h2>Main Content</h2>
+            <p>This is the main area of the page where content is displayed.</p>
+        </div>
+    </div>
+
+</body>
+</html>

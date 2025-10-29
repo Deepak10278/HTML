@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Form and Table</title>
+    <style>
+        body { font-family: Arial; padding: 40px; background-color: #f9f9f9; }
+        form, table {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #ccc;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+        }
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+        <h2>Contact Us</h2>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Message"></textarea>
+        <input type="submit" value="Send Message">
+    </form>
+
+    <table>
+        <tr><th>Name</th><th>Department</th><th>Contact</th></tr>
+        <tr><td>John Doe</td><td>IT</td><td>1234567890</td></tr>
+        <tr><td>Jane Smith</td><td>HR</td><td>9876543210</td></tr>
+    </table>
+
+</body>
+</html>

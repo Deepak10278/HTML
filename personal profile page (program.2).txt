@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Profile</title>
+</head>
+<body>
+  <h1>Deepak's Profile</h1>
+  <img src="profile.jpg" alt="Profile Picture" width="150">
+  <p><strong>Name:</strong> Deepak</p>
+  <p><strong>Skills:</strong> Linux, Vim, HTML</p>
+  <p><strong>About Me:</strong> Passionate learner exploring web development.</p>
+</body>
+</html>
