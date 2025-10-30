@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Profile - Deepak L Gowda</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #e0f7fa, #fce4ec);
+      color: #333;
+      transition: background 0.5s ease;
+    }
+
+    header {
+      background-color: #ffffff;
+      text-align: center;
+      padding: 30px 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      color: #0077cc;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #0077cc;
+      font-weight: 600;
+      font-size: 1.1em;
+    }
+
+    nav a:hover {
+      color: #005fa3;
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 800px;
+      margin: auto;
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+
+    section h2 {
+      font-size: 2em;
+      color: #0077cc;
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 200px;
+      border-radius: 50%;
+      margin-top: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #0077cc;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #ffffff;
+      padding: 15px;
+      font-size: 14px;
+      color: #666;
+      margin-top: 40px;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+    }
+
+    .btn-change-bg {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    .btn-change-bg:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+  <script>
+    // Alert popup when page loads
+    window.onload = function() {
+      alert("Welcome to Deepak L Gowda's Profile Page!");
+    };
+
+    // Function to change background color
+    function changeBackground() {
+      document.body.style.background = 'linear-gradient(to right, #ffe0b2, #c8e6c9)';
+    }
+  </script>
+
+  <header>
+    <h1>My Profile</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2>Welcome to My Profile</h2>
+    <p>Hi, I'm <strong>Deepak L Gowda</strong>.</p>
+    <p>I’m currently studying <strong>BCA at RV University</strong>.</p>
+    <p>Welcome to my personal webpage created using HTML, CSS, and JavaScript.</p>
+    <p>My hobbies include playing video games, watching sports, and enjoying outdoor activities.</p>
+    <img src="profile.jpg" alt="Deepak L Gowda">
+    <button class="btn-change-bg" onclick="changeBackground()">Change Background</button>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <table>
+      <tr>
+        <th>Level</th>
+        <th>Institution</th>
+        <th>Location</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <td>11th & 12th</td>
+        <td>Narayana PU College</td>
+        <td>Bangalore</td>
+        <td>Completed</td>
+      </tr>
+      <tr>
+        <td>Undergraduate</td>
+        <td>RV University</td>
+        <td>Bangalore</td>
+        <td>Ongoing (BCA)</td>
+      </tr>
+      <tr>
+        <td>Future Plan</td>
+        <td>Master's Abroad</td>
+        <td>—</td>
+        <td>Planned</td>
+      </tr>
+    </table>
+  </section>
+
+  <section id="skills">
+    <h2>My Skills</h2>
+    <table>
+      <tr>
+        <th>Skill</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>💻 Basic Coding</td>
+        <td>Comfortable with writing simple programs</td>
+      </tr>
+      <tr>
+        <td>🧠 HTML, CSS & JavaScript</td>
+        <td>Basic understanding and usage for web development</td>
+      </tr>
+      <tr>
+        <td>🎨 Creativity & Design Thinking</td>
+        <td>Ability to think creatively and design user-friendly interfaces</td>
+      </tr>
+    </table>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>You can reach me through my college email:</p>
+    <p><strong>deepak@example.com</strong></p>
+    <p>Or connect with me on social media (optional).</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Deepak L Gowda | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
