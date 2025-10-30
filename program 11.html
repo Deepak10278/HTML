@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Course Registration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #a2c2e2, #f7f7f7);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 500px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 25px;
+    }
+
+    .step {
+      display: none;
+    }
+
+    .step.active {
+      display: block;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus, select:focus {
+      border-color: #3498db;
+      box-shadow: 0 0 5px rgba(52,152,219,0.5);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      background: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #2980b9;
+    }
+
+    .success {
+      text-align: center;
+      font-size: 1.4em;
+      color: #27ae60;
+      font-weight: 700;
+      display: none;
+    }
+
+    .steps {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .steps div {
+      width: 33%;
+      text-align: center;
+      padding: 8px;
+      border-radius: 8px;
+      background: #eee;
+      color: #555;
+    }
+
+    .steps div.active {
+      background: #3498db;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Online Course Registration</h1>
+
+    <div class="steps">
+      <div class="active">1. Details</div>
+      <div>2. Course</div>
+      <div>3. Confirm</div>
+    </div>
+
+    <form id="regForm">
+      <!-- Step 1 -->
+      <div class="step active" id="step1">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="Enter your number" required />
+        </div>
+        <button type="button" onclick="nextStep(2)">Next</button>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step" id="step2">
+        <div class="form-group">
+          <label for="course">Select Course</label>
+          <select id="course" required>
+            <option value="">Choose a course</option>
+            <option value="webdev">Web Development</option>
+            <option value="datasci">Data Science</option>
+            <option value="graphic">Graphic Design</option>
+            <option value="ai">Artificial Intelligence</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="duration">Duration</label>
+          <select id="duration" required>
+            <option value="">Choose duration</option>
+            <option value="1month">1 Month</option>
+            <option value="3months">3 Months</option>
+            <option value="6months">6 Months</option>
+          </select>
+        </div>
+        <button type="button" onclick="nextStep(3)">Next</button>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step" id="step3">
+        <p>Please review your details before confirming registration.</p>
+        <button type="button" onclick="submitForm()">Confirm & Submit</button>
+      </div>
+    </form>
+
+    <div class="success" id="successMsg">✅ Registration Successful!</div>
+  </div>
+
+  <script>
+    function nextStep(step) {
+      document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.steps div').forEach(s => s.classList.remove('active'));
+      document.getElementById('step' + step).classList.add('active');
+      document.querySelector('.steps div:nth-child(' + step + ')').classList.add('active');
+    }
+
+    function submitForm() {
+      document.getElementById('regForm').style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
