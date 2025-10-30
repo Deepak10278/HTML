@@ -1,13 +1,234 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Profile</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile - Deepak L Gowda</title>
+
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at 20% 30%, #0f0c29, #302b63, #24243e);
+      color: #f0f0f0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, #a855f7, #06b6d4, #facc15);
+      background-size: 400% 400%;
+      opacity: 0.15;
+      animation: gradientShift 10s ease infinite;
+      z-index: -1;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      background: rgba(20, 20, 40, 0.85);
+      border: 2px solid transparent;
+      border-image: linear-gradient(135deg, #a855f7, #06b6d4, #facc15);
+      border-image-slice: 1;
+      border-radius: 25px;
+      box-shadow: 0 0 40px rgba(168, 85, 247, 0.2), 0 0 60px rgba(6, 182, 212, 0.1);
+      padding: 40px;
+      max-width: 780px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      animation: fadeIn 1.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .photo {
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 25px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #06b6d4, #a855f7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      font-size: 34px;
+      font-weight: 700;
+      font-family: 'Orbitron', sans-serif;
+      box-shadow: 0 0 35px rgba(168, 85, 247, 0.5);
+      animation: spin 6s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(90deg, #a855f7, #facc15, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 2.5em;
+      margin-bottom: 8px;
+    }
+
+    h3 {
+      color: #b5b5b5;
+      margin-bottom: 25px;
+      font-weight: 400;
+    }
+
+    section {
+      margin: 25px 0;
+      text-align: left;
+    }
+
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(90deg, #facc15, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 1.2em;
+      border-left: 4px solid #facc15;
+      padding-left: 10px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .skills, .hobbies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      padding: 9px 16px;
+      border-radius: 25px;
+      background: rgba(250, 204, 21, 0.1);
+      border: 1px solid rgba(168, 85, 247, 0.4);
+      color: #06b6d4;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .tag:hover {
+      background: linear-gradient(90deg, #a855f7, #06b6d4);
+      color: #fff;
+      box-shadow: 0 0 18px rgba(250, 204, 21, 0.4);
+      transform: scale(1.08);
+    }
+
+    footer {
+      margin-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 22px;
+    }
+
+    .social-links a {
+      font-size: 1.7em;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: 0.4s ease;
+    }
+
+    .social-links a:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 20px currentColor;
+    }
+
+    .github { color: #facc15; }
+    .github:hover { background: #facc15; color: #000; }
+
+    .instagram { color: #e1306c; }
+    .instagram:hover { background: #e1306c; color: #fff; }
+
+    .linkedin { color: #0a66c2; }
+    .linkedin:hover { background: #0a66c2; color: #fff; }
+
+    .copyright {
+      font-size: 0.85em;
+      color: #999;
+    }
+  </style>
 </head>
 <body>
-  <h1>Deepak's Profile</h1>
-  <img src="profile.jpg" alt="Profile Picture" width="150">
-  <p><strong>Name:</strong> Deepak</p>
-  <p><strong>Skills:</strong> Linux, Vim, HTML</p>
-  <p><strong>About Me:</strong> Passionate learner exploring web development.</p>
+  <div class="container">
+    <div class="photo">DLG</div>
+    <h1>Deepak L Gowda</h1>
+    <h3>BCA Student | RV University</h3>
+
+    <section>
+      <h2>About Me</h2>
+      <p>Hello! I’m <strong>Deepak L Gowda</strong>, a BCA student at <strong>RV University</strong>. I love learning about technology, coding, and creating futuristic designs that merge creativity and logic.</p>
+    </section>
+
+    <section>
+      <h2>My Skills</h2>
+      <div class="skills">
+        <span class="tag">💻 Coding</span>
+        <span class="tag">🧠 Problem Solving</span>
+        <span class="tag">⚙️ Logical Thinking</span>
+        <span class="tag">🎨 Web Design</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>My Hobbies</h2>
+      <div class="hobbies">
+        <span class="tag">🎮 Gaming</span>
+        <span class="tag">🏏 Cricket</span>
+      </div>
+    </section>
+
+    <footer>
+      <div class="social-links">
+        <a href="https://github.com/Deepak10278" target="_blank" class="github" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/deepakgowda_13/" target="_blank" class="instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/in/deepak-lgowda" target="_blank" class="linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <div class="copyright">
+        Designed by Deepak L Gowda | © 2025
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
